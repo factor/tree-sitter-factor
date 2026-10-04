@@ -39,6 +39,9 @@ pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
 pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
 
 #[cfg(test)]
+mod corpus;
+
+#[cfg(test)]
 mod tests {
     #[test]
     fn queries_compile() {
