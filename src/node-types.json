@@ -57,6 +57,7 @@
   {
     "type": "comment",
     "named": true,
+    "extra": true,
     "fields": {}
   },
   {
@@ -170,6 +171,7 @@
   {
     "type": "source_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -221,9 +223,20 @@
   {
     "type": "stack_effect",
     "named": true,
-    "fields": {},
+    "fields": {
+      "params": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "effect",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
@@ -315,10 +328,31 @@
   {
     "type": "word_defn",
     "named": true,
-    "fields": {},
+    "fields": {
+      "effect": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "stack_effect",
+            "named": true
+          }
+        ]
+      },
+      "word_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sname",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "expr",

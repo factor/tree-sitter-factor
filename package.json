@@ -1,19 +1,55 @@
 {
   "name": "tree-sitter-factor",
   "version": "1.0.0",
-  "description": "tree-sitter grammar for the Factor programming language",
+  "description": "Tree-sitter grammar for the Factor programming language",
   "main": "bindings/node",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Razetime",
+  "types": "bindings/node/index.d.ts",
+  "keywords": [
+    "tree-sitter",
+    "factor",
+    "grammar"
+  ],
   "license": "ISC",
+  "author": "John Benediktsson <mrjbq7@gmail.com>",
+  "contributors": [
+    "Razetime"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjbq7/tree-sitter-factor"
+  },
+  "files": [
+    "bindings/node/*",
+    "binding.gyp",
+    "grammar.js",
+    "queries",
+    "src",
+    "tree-sitter.json",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "tree-sitter generate --js-runtime native",
+    "test": "tree-sitter test",
+    "test:bindings": "node --test bindings/node/*_test.js",
+    "install": "node-gyp-build"
+  },
   "dependencies": {
-    "man": "^2.0.0",
-    "nan": "^2.16.0",
-    "node": "^18.4.0"
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.4"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.6"
+    "tree-sitter-cli": "0.27.0",
+    "tree-sitter": "^0.25.1"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.1"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
   }
 }

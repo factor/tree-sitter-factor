@@ -1,0 +1,40 @@
+{
+  "grammars": [
+    {
+      "name": "factor",
+      "camelcase": "Factor",
+      "scope": "source.factor",
+      "path": ".",
+      "file-types": [
+        "factor"
+      ],
+      "injection-regex": "^factor$",
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "ISC",
+    "description": "Tree-sitter grammar for the Factor programming language",
+    "authors": [
+      {
+        "name": "John Benediktsson",
+        "email": "mrjbq7@gmail.com",
+        "url": "https://github.com/mrjbq7"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/mrjbq7/tree-sitter-factor"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

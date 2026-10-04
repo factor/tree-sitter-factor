@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "factor",
   "rules": {
     "source_file": {
@@ -103,24 +104,36 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "::?"
+              "type": "FIELD",
+              "name": "word_start",
+              "content": {
+                "type": "PATTERN",
+                "value": "::?"
+              }
             },
             {
               "type": "SYMBOL",
               "name": "_ws"
             },
             {
-              "type": "SYMBOL",
-              "name": "sname"
+              "type": "FIELD",
+              "name": "word_name",
+              "content": {
+                "type": "SYMBOL",
+                "name": "sname"
+              }
             },
             {
               "type": "SYMBOL",
               "name": "_ws"
             },
             {
-              "type": "SYMBOL",
-              "name": "stack_effect"
+              "type": "FIELD",
+              "name": "effect",
+              "content": {
+                "type": "SYMBOL",
+                "name": "stack_effect"
+              }
             },
             {
               "type": "SYMBOL",
@@ -478,16 +491,20 @@
           "name": "_ws"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "effect"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "FIELD",
+          "name": "params",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "effect"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",
@@ -4397,6 +4414,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
-

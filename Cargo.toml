@@ -1,26 +1,24 @@
 [package]
-name = "tree-sitter-YOUR-LANGUAGE-NAME"
-description = "YOUR-LANGUAGE-NAME grammar for the tree-sitter parsing library"
-version = "0.0.1"
-keywords = ["incremental", "parsing", "YOUR-LANGUAGE-NAME"]
+name = "tree-sitter-factor"
+version = "1.0.0"
+description = "Tree-sitter grammar for the Factor programming language"
+authors = ["John Benediktsson <mrjbq7@gmail.com>"]
+edition = "2024"
+license = "ISC"
+repository = "https://github.com/mrjbq7/tree-sitter-factor"
+keywords = ["incremental", "parsing", "tree-sitter", "factor"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-YOUR-LANGUAGE-NAME"
-edition = "2018"
-license = "MIT"
-
 build = "bindings/rust/build.rs"
-include = [
-  "bindings/rust/*",
-  "grammar.js",
-  "queries/*",
-  "src/*",
-]
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "README.md", "LICENSE"]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "~0.20"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.27"
