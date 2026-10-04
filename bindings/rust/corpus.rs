@@ -22,7 +22,7 @@ fn grammar_corpus() {
     let mut failures = Vec::new();
     let separator = "========================================================================";
     for file in files {
-        let contents = fs::read_to_string(&file).unwrap();
+        let contents = fs::read_to_string(&file).unwrap().replace("\r\n", "\n");
         let sections: Vec<_> = contents.split(separator).collect();
         assert_eq!(
             sections.len() % 2,
