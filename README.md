@@ -155,4 +155,6 @@ are ignored by Git. `npm test` delegates to the primary Rust test suite.
 - [factor.vim syntax highlighting](https://github.com/factor/factor.vim)
 - [Tree-sitter documentation](https://tree-sitter.github.io/tree-sitter/)
 
-Distributed under the [ISC license](LICENSE).
+Distributed under the [BSD 2-Clause license](LICENSE), matching the Factor
+project. The original grammar’s copyright and ISC license notice are retained
+in [LICENSES/ISC.txt](LICENSES/ISC.txt).

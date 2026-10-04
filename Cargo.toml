@@ -4,12 +4,12 @@ version = "1.0.0"
 description = "Tree-sitter grammar for the Factor programming language"
 authors = ["John Benediktsson <mrjbq7@gmail.com>"]
 edition = "2024"
-license = "ISC"
+license = "BSD-2-Clause"
 repository = "https://github.com/mrjbq7/tree-sitter-factor"
 keywords = ["incremental", "parsing", "tree-sitter", "factor"]
 categories = ["parsing", "text-editors"]
 build = "bindings/rust/build.rs"
-include = ["bindings/rust/*", "data/*", "test/corpus/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "README.md", "LICENSE"]
+include = ["bindings/rust/*", "data/*", "test/corpus/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "README.md", "LICENSE", "LICENSES/*"]
 
 [lib]
 path = "bindings/rust/lib.rs"

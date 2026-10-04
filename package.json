@@ -9,7 +9,7 @@
     "factor",
     "grammar"
   ],
-  "license": "ISC",
+  "license": "BSD-2-Clause",
   "author": "John Benediktsson <mrjbq7@gmail.com>",
   "contributors": [
     "Razetime"
@@ -25,7 +25,8 @@
     "queries",
     "src",
     "tree-sitter.json",
-    "LICENSE"
+    "LICENSE",
+    "LICENSES"
   ],
   "engines": {
     "node": ">=20"
