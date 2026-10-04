@@ -31,3 +31,6 @@ jobs:
 
       - name: Test documentation examples
         run: cargo +stable test --doc --verbose
+
+      - name: Check generated scanner and highlighting data
+        run: cargo +stable run --example generate -- --check

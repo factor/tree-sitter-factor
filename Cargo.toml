@@ -9,10 +9,14 @@ repository = "https://github.com/mrjbq7/tree-sitter-factor"
 keywords = ["incremental", "parsing", "tree-sitter", "factor"]
 categories = ["parsing", "text-editors"]
 build = "bindings/rust/build.rs"
-include = ["bindings/rust/*", "test/corpus/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "README.md", "LICENSE"]
+include = ["bindings/rust/*", "data/*", "test/corpus/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "README.md", "LICENSE"]
 
 [lib]
 path = "bindings/rust/lib.rs"
+
+[[example]]
+name = "generate"
+path = "bindings/rust/generate.rs"
 
 [dependencies]
 tree-sitter-language = "0.1"
@@ -22,3 +26,4 @@ cc = "1.2"
 
 [dev-dependencies]
 tree-sitter = "0.27"
+serde_json = "1"
