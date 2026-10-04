@@ -20,10 +20,15 @@ cargo run --example generate
 tree-sitter test
 ```
 
-Node.js and npm are not needed. `grammar.js` is evaluated by Tree-sitter's
+Node.js and npm are not needed for development or CI. `grammar.js` is evaluated by Tree-sitter's
 native JavaScript runtime. The Rust generator updates the scanner's reserved
 words and highlighting query; `cargo run --example generate -- --check` checks
 that these generated files are current.
+
+An optional Node binding and `package.json` are included for npm distribution.
+Only developers using that binding need to run `npm ci` and
+`npm run test:bindings`. The resulting `node_modules` and native build files
+are ignored by Git. The default tests and GitHub Actions workflow use Rust.
 
 To refresh builtin highlighting from the vocabulary lists in factor.vim:
 
