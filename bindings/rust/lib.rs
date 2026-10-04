@@ -38,6 +38,15 @@ pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
 /// The local variable query for this grammar.
 pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
 
+/// The symbol navigation query for this grammar.
+pub const TAGS_QUERY: &str = include_str!("../../queries/tags.scm");
+
+/// The folding query for this grammar.
+pub const FOLDS_QUERY: &str = include_str!("../../queries/folds.scm");
+
+/// The indentation query for this grammar.
+pub const INDENTS_QUERY: &str = include_str!("../../queries/indents.scm");
+
 #[cfg(test)]
 mod corpus;
 
@@ -48,6 +57,9 @@ mod tests {
         let language = super::LANGUAGE.into();
         tree_sitter::Query::new(&language, super::HIGHLIGHTS_QUERY).unwrap();
         tree_sitter::Query::new(&language, super::LOCALS_QUERY).unwrap();
+        tree_sitter::Query::new(&language, super::TAGS_QUERY).unwrap();
+        tree_sitter::Query::new(&language, super::FOLDS_QUERY).unwrap();
+        tree_sitter::Query::new(&language, super::INDENTS_QUERY).unwrap();
     }
 
     #[test]

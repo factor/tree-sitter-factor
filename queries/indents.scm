@@ -1,0 +1,20 @@
+[
+  (word_defn)
+  (method_defn)
+  (syntax_defn)
+  (tuple_defn)
+  (struct_defn)
+  (predicate_defn)
+  (help_defn)
+  (article_defn)
+  (directive_defn)
+  (functor_defn)
+  (com_interface)
+  (objc_class)
+  (private_section)
+  (compile_time)
+  (quotation)
+  (array)
+  (slot)
+] @indent
+[ ";" "]" "}" "PRIVATE>" ">>" ";FUNCTOR>" ";CLASS>" ] @outdent
