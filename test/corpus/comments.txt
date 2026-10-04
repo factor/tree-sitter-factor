@@ -1,0 +1,72 @@
+========================================================================
+Line comments and EOF
+========================================================================
+
+! initial comment
+: foo ( -- ) ! body comment
+; ! final comment
+
+---
+
+(source_file (comment) (word_defn (name) (stack_effect) (comment)) (comment))
+
+========================================================================
+Block and effect comments
+========================================================================
+
+/* first
+second */ (( no stack effect -- here ))
+
+---
+
+(source_file (comment) (comment))
+
+========================================================================
+Bracket comments with matching delimiters
+========================================================================
+
+![[ line one
+line two ]]
+![==[ inner ]] mismatched ]=] still comment ]==]
+
+---
+
+(source_file (comment) (comment))
+
+========================================================================
+Comment markers inside strings and word names
+========================================================================
+
+"! not a comment" "/* also text */" foo! !comment
+
+---
+
+(source_file (string) (string) (word) (word))
+
+========================================================================
+Comments between declaration operands
+========================================================================
+
+USING: kernel ! vocab comment
+math ;
+: ! before name
+foo ( ! input
+x -- ! output
+y ) ! body
+dup ;
+
+---
+
+(source_file (import_defn (name) (comment) (name)) (word_defn (comment) (name) (stack_effect (comment) (effect (effect_parameter (name))) (comment) (effect (effect_parameter (name)))) (comment) (expression (word))))
+
+========================================================================
+Shebang
+========================================================================
+
+#!/usr/bin/env factor
+USING: io ;
+"hello" print
+
+---
+
+(source_file (shebang) (import_defn (name)) (string) (word))

@@ -1,24 +1,13 @@
-[  (builtin_kernel)
-  (builtin_assocs)
-  (builtin_combinators)
-  (builtin_math)
-  (builtin_sequences)
-  (builtin_namespaces)
-  (builtin_arrays)
-  (builtin_io)
-  (builtin_strings)
-  (builtin_vectors)
-  (builtin_continuations)
-] @function.builtin
 (number) @number
+(boolean) @constant.builtin
 (string) @string
-(bool) @bool
+(raw_string) @string
+(regexp) @string.regexp
+(character_literal) @character
 (comment) @comment
-(word_defn 
-  word_name:(sname) @function.method)
-
-(stack_effect 
-  params:(effect 
-    (sname) @variable.parameter))
-  
-
+(shebang) @comment
+(word_defn name: (name) @function)
+(method_defn class: (name) @type name: (name) @function.method)
+(generic_defn name: (name) @function)
+(syntax_defn name: (name) @function.macro)
+(effect_parameter name: (name) @variable.parameter)

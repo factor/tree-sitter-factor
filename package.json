@@ -25,13 +25,14 @@
     "queries",
     "src",
     "tree-sitter.json",
-    "LICENSE"
+    "LICENSE",
+    "scripts/generate-reserved.js"
   ],
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "generate": "tree-sitter generate --js-runtime native",
+    "generate": "tree-sitter generate --js-runtime native && node scripts/generate-reserved.js",
     "test": "tree-sitter test",
     "test:bindings": "node --test bindings/node/*_test.js",
     "install": "node-gyp-build"

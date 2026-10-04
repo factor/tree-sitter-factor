@@ -1,0 +1,61 @@
+========================================================================
+Nested typed stack effects
+========================================================================
+
+: twice ( quot: ( x -- y ) x -- y ) call ;
+
+---
+
+(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name))))) (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))))
+
+========================================================================
+Typed and standalone effect parameters
+========================================================================
+
+: convert ( input: string -- result: integer ) convert ;
+( :integer -- :float )
+
+---
+
+(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name) (word))) (effect (effect_parameter (name) (word)))) (expression (word))) (stack_effect (effect (effect_parameter (word))) (effect (effect_parameter (word)))))
+
+========================================================================
+Row variables and termination effects
+========================================================================
+
+( ..a x -- ..a y ) ( -- * ) ( ..x quot: ( ..x -- ..y ) -- ..y )
+
+---
+
+(source_file (stack_effect (effect (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name)) (effect_parameter (name)))) (stack_effect (effect (effect_parameter (name)))) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))))) (effect (effect_parameter (name)))))
+
+========================================================================
+Call and execute effects
+========================================================================
+
+call( x -- y ) execute( -- )
+
+---
+
+(source_file (call_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (call_effect))
+
+========================================================================
+Lexical quotation parameters
+========================================================================
+
+[| x y | x y + ] [let 1 :> x x ]
+
+---
+
+(source_file (quotation (local_parameters (name) (name)) (expression (word) (word) (word))) (quotation (expression (number) (local_binding (name)) (word))))
+
+========================================================================
+Mutable and multiple locals
+========================================================================
+
+:: total ( xs -- n ) 0 :> n! xs [| x | n x + n! ] each n ;
+1 2 :> ( x y ) x y +
+
+---
+
+(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (number) (local_binding (name)) (word) (quotation (local_parameters (name)) (expression (word) (word) (word) (word))) (word) (word))) (number) (number) (local_binding (name) (name)) (word) (word) (word))

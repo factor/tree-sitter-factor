@@ -1,0 +1,145 @@
+========================================================================
+Numbers and radix prefixes
+========================================================================
+
+0 +123 -123 1,000 1_000 0b101 0B11 -0b10 +0o77 0O70 -0xFF 0Xabcdef
+
+---
+
+(source_file (number) (number) (number) (number) (number) (number) (number) (number) (number) (number) (number) (number))
+
+========================================================================
+Floats and exponents
+========================================================================
+
+1.0 -0.0 .5 -.5 1. 1e3 -1.2E-3 0x1.fp-3 0X.FP+2 0b1.01p3 0o7.1P-1
+
+---
+
+(source_file (number) (number) (number) (number) (number) (number) (number) (number) (number) (number) (number))
+
+========================================================================
+Ratios mixed numbers and special floats
+========================================================================
+
+1/2 -1/2 +1/2 2+1/3 -2-1/3 1/0. -1/0. 0/0. NAN: 80000
+
+---
+
+(source_file (number) (number) (number) (number) (number) (number) (number) (number) (nan_literal (name)))
+
+========================================================================
+Numeric looking words stay intact
+========================================================================
+
+1array 2dup 0xray 1e 1, 1_ -rot /mod . + -
+
+---
+
+(source_file (word) (word) (word) (word) (word) (word) (word) (word) (word) (word) (word))
+
+========================================================================
+Booleans
+========================================================================
+
+t f true false
+
+---
+
+(source_file (boolean) (boolean) (word) (word))
+
+========================================================================
+Strings and escaped quotes
+========================================================================
+
+"hello" "" "a\"b" "a\\b" "line\nfeed" P" /tmp/file" URL" https://factorcode.org"
+
+---
+
+(source_file (string) (string) (string) (string) (string) (string) (string) (string) (string))
+
+========================================================================
+Triple quoted strings
+========================================================================
+
+""" first
+second "quoted" """
+
+---
+
+(source_file (string))
+
+========================================================================
+Raw strings with exact matching delimiters
+========================================================================
+
+[[ hello ]]
+[=[ contains ]] and "quotes" ]=]
+[========[ arbitrary delimiter ]========]
+EBNF[=[ rule = "x" ]=]
+
+---
+
+(source_file (raw_string) (raw_string) (raw_string) (raw_string))
+
+========================================================================
+Characters including delimiters
+========================================================================
+
+CHAR: a CHAR: ; CHAR: " CHAR: \n CHAR: \u03bb CHAR: latin-capital-letter-a
+
+---
+
+(source_file (character_literal (character)) (character_literal (character)) (character_literal (character)) (character_literal (character)) (character_literal (character)) (character_literal (character)))
+
+========================================================================
+Nested quotations and collections
+========================================================================
+
+[ 1 [ 2 + ] call ]
+H{ { "key" V{ 1 2 } } }
+B{ 1 2 } BV{ 3 } T{ point f 1 2 } C{ 1 2 } HS{ a b }
+
+---
+
+(source_file (quotation (expression (number) (quotation (expression (number) (word))) (word))) (array (collection_start) (array (collection_start) (string) (array (collection_start) (number) (number)))) (array (collection_start) (number) (number)) (array (collection_start) (number)) (array (collection_start) (word) (boolean) (number) (number)) (array (collection_start) (number) (number)) (array (collection_start) (word) (word)))
+
+========================================================================
+Vocabulary-defined collection prefixes
+========================================================================
+
+CUSTOM{ [ a ] { b } } maybe{ integer } union{ integer float }
+
+---
+
+(source_file (array (collection_start) (quotation (expression (word))) (array (collection_start) (word))) (array (collection_start) (word)) (array (collection_start) (word) (word)))
+
+========================================================================
+Fried quotations and arrays
+========================================================================
+
+'[ _ 1 + ] '{ _ @ } 'H{ { _ @ } }
+
+---
+
+(source_file (quotation (expression (word) (number) (word))) (array (collection_start) (word) (word)) (array (collection_start) (array (collection_start) (word) (word))))
+
+========================================================================
+Word and method wrappers
+========================================================================
+
+\ ; \ [ \ t M\ integer + POSTPONE: foo
+
+---
+
+(source_file (word_literal (name)) (word_literal (name)) (word_literal (name)) (method_literal (name) (name)) (postpone (name)))
+
+========================================================================
+Regexp literal and flags
+========================================================================
+
+R/ ^a\/b[0-9]+$/i
+
+---
+
+(source_file (regexp))
