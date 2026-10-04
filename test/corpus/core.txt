@@ -7,7 +7,40 @@ Ordinary and locals definitions
 
 ---
 
-(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word) (word))) (word_defn (name) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name)) (effect_parameter (name)))) (expression (word) (word) (word) (word))))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)
+      (word)))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name))))
+    (expression
+      (word)
+      (word)
+      (word)
+      (word))))
+
 
 ========================================================================
 Empty definition and effects
@@ -19,7 +52,27 @@ Empty definition and effects
 
 ---
 
-(source_file (word_defn (name) (stack_effect)) (word_defn (name) (stack_effect (effect (effect_parameter (name)))) (expression (number))) (word_defn (name) (stack_effect (effect (effect_parameter (name)))) (expression (word))))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (number)))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word))))
+
 
 ========================================================================
 Macro memo and typed definitions
@@ -33,7 +86,66 @@ TYPED:: twice ( x: integer -- y: integer ) x 2 * ;
 
 ---
 
-(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name)))) (expression (quotation (expression (number))))) (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))) (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))) (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))) (word_defn (name) (stack_effect (effect (effect_parameter (name) (word))) (effect (effect_parameter (name) (word)))) (expression (word) (number) (word))))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (quotation
+        (expression
+          (number)))))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)
+          (word)))
+      (effect
+        (effect_parameter
+          (name)
+          (word))))
+    (expression
+      (word)
+      (number)
+      (word))))
+
 
 ========================================================================
 Method definitions
@@ -44,7 +156,29 @@ M:: integer add ( x y -- z ) x y + ;
 
 ---
 
-(source_file (method_defn (name) (name) (expression (word))) (method_defn (name) (name) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word) (word) (word))))
+(source_file
+  (method_defn
+    (name)
+    (name)
+    (expression
+      (word)))
+  (method_defn
+    (name)
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)
+      (word)
+      (word))))
+
 
 ========================================================================
 Generic declarations
@@ -58,7 +192,50 @@ HOOK: process current-backend ( x -- y )
 
 ---
 
-(source_file (generic_defn (name) (stack_effect (effect (effect_parameter (name))))) (generic_defn (name) (number) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name))))) (generic_defn (name) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name))))) (generic_defn (name) (stack_effect)) (generic_defn (name) (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name))))))
+(source_file
+  (generic_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))))
+  (generic_defn
+    (name)
+    (number)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name)))))
+  (generic_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name)))))
+  (generic_defn
+    (name)
+    (stack_effect))
+  (generic_defn
+    (name)
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))))
+
 
 ========================================================================
 Parsing word definition and delimiter names
@@ -70,7 +247,32 @@ SYNTAX: " parse-string suffix! ;
 
 ---
 
-(source_file (syntax_defn (name) (expression (word_literal (name)) (word))) (syntax_defn (name) (expression (word) (word))) (word_defn (name) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))))
+(source_file
+  (syntax_defn
+    (name)
+    (expression
+      (word_literal
+        (name))
+      (word)))
+  (syntax_defn
+    (name)
+    (expression
+      (word)
+      (word)))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word))))
+
 
 ========================================================================
 Imports
@@ -90,7 +292,36 @@ RENAME: + math => plus
 
 ---
 
-(source_file (import_defn (name) (name)) (import_defn) (import_defn (name)) (import_defn (name)) (import_defn (name)) (import_defn (name)) (import_defn (name)) (import_defn (name) (name)) (import_defn (name) (name) (name)) (import_defn (name) (name)) (import_defn (name) (name) (name)))
+(source_file
+  (import_defn
+    (name)
+    (name))
+  (import_defn)
+  (import_defn
+    (name))
+  (import_defn
+    (name))
+  (import_defn
+    (name))
+  (import_defn
+    (name))
+  (import_defn
+    (name))
+  (import_defn
+    (name)
+    (name))
+  (import_defn
+    (name)
+    (name)
+    (name))
+  (import_defn
+    (name)
+    (name))
+  (import_defn
+    (name)
+    (name)
+    (name)))
+
 
 ========================================================================
 Tuple slots and inheritance
@@ -103,7 +334,33 @@ TUPLE: empty ;
 
 ---
 
-(source_file (tuple_defn (name) (name) (name) (name)) (tuple_defn (name) (name)) (tuple_defn (name) (slot (name) (name) (slot_attribute (number)) (slot_attribute)) (slot (name) (slot_attribute (array (collection_start) (number) (number))))) (tuple_defn (name)))
+(source_file
+  (tuple_defn
+    (name)
+    (name)
+    (name)
+    (name))
+  (tuple_defn
+    (name)
+    (name))
+  (tuple_defn
+    (name)
+    (slot
+      (name)
+      (name)
+      (slot_attribute
+        (number))
+      (slot_attribute))
+    (slot
+      (name)
+      (slot_attribute
+        (array
+          (collection_start)
+          (number)
+          (number)))))
+  (tuple_defn
+    (name)))
+
 
 ========================================================================
 Classes predicates and instances
@@ -120,7 +377,35 @@ C: <point> point
 
 ---
 
-(source_file (class_defn (name)) (class_defn (name)) (class_defn (name) (name)) (class_defn (name) (name) (name)) (class_defn (name) (name) (name)) (predicate_defn (name) (name) (expression (number) (word))) (instance_defn (name) (name)) (constructor_defn (name) (name)))
+(source_file
+  (class_defn
+    (name))
+  (class_defn
+    (name))
+  (class_defn
+    (name)
+    (name))
+  (class_defn
+    (name)
+    (name)
+    (name))
+  (class_defn
+    (name)
+    (name)
+    (name))
+  (predicate_defn
+    (name)
+    (name)
+    (expression
+      (number)
+      (word)))
+  (instance_defn
+    (name)
+    (name))
+  (constructor_defn
+    (name)
+    (name)))
+
 
 ========================================================================
 Symbols constants aliases and deferred words
@@ -137,7 +422,35 @@ DEFER: later
 
 ---
 
-(source_file (symbol_defn (name)) (symbol_defn (name) (name)) (symbol_defn (name)) (constant_defn (name) (string)) (constant_defn (name) (array (collection_start) (array (collection_start) (string) (number)))) (constant_defn (name) (array (collection_start))) (alias_defn (name) (name)) (deferred_defn (name)))
+(source_file
+  (symbol_defn
+    (name))
+  (symbol_defn
+    (name)
+    (name))
+  (symbol_defn
+    (name))
+  (constant_defn
+    (name)
+    (string))
+  (constant_defn
+    (name)
+    (array
+      (collection_start)
+      (array
+        (collection_start)
+        (string)
+        (number))))
+  (constant_defn
+    (name)
+    (array
+      (collection_start)))
+  (alias_defn
+    (name)
+    (name))
+  (deferred_defn
+    (name)))
+
 
 ========================================================================
 Main and lifecycle hooks
@@ -150,7 +463,21 @@ SHUTDOWN-HOOK: cleanup
 
 ---
 
-(source_file (main_defn (word)) (main_defn (quotation (expression (string) (word)))) (main_defn (quotation (expression (word)))) (main_defn (word)))
+(source_file
+  (main_defn
+    (word))
+  (main_defn
+    (quotation
+      (expression
+        (string)
+        (word))))
+  (main_defn
+    (quotation
+      (expression
+        (word))))
+  (main_defn
+    (word)))
+
 
 ========================================================================
 Private and compile-time sections
@@ -163,7 +490,18 @@ PRIVATE>
 
 ---
 
-(source_file (private_section (word_defn (name) (stack_effect))) (compile_time (import_defn (name)) (word_defn (name) (stack_effect))))
+(source_file
+  (private_section
+    (word_defn
+      (name)
+      (stack_effect)))
+  (compile_time
+    (import_defn
+      (name))
+    (word_defn
+      (name)
+      (stack_effect))))
+
 
 ========================================================================
 Definition properties
@@ -176,7 +514,39 @@ TUPLE: closed ; final
 
 ---
 
-(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name))))) (declaration) (declaration) (declaration) (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))) (declaration) (syntax_defn (name)) (declaration) (declaration) (tuple_defn (name)) (declaration))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name)))))
+  (declaration)
+  (declaration)
+  (declaration)
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)))
+  (declaration)
+  (syntax_defn
+    (name))
+  (declaration)
+  (declaration)
+  (tuple_defn
+    (name))
+  (declaration))
+
 
 ========================================================================
 Unicode and punctuation in names
@@ -188,4 +558,23 @@ foo! foo:bar (clone) +@ 2dup 1array
 
 ---
 
-(source_file (import_defn (name)) (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))) (word) (word) (word) (word) (word) (word))
+(source_file
+  (import_defn
+    (name))
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word)))
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word))

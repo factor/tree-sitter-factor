@@ -1,0 +1,1019 @@
+========================================================================
+Foreign functions and aliases
+========================================================================
+
+FUNCTION: void* foo ( int *x, float y )
+FUNCTION-ALIAS: factor-foo int c_foo ( )
+GL-FUNCTION: void glFoo ( uint x )
+
+---
+
+(source_file
+  (ffi_defn
+    (name)
+    (name)
+    (ffi_parameters
+      (ffi_parameter
+        (name)
+        (name))
+      (ffi_parameter
+        (name)
+        (name))))
+  (ffi_defn
+    (name)
+    (name)
+    (name)
+    (ffi_parameters))
+  (ffi_defn
+    (name)
+    (name)
+    (ffi_parameters
+      (ffi_parameter
+        (name)
+        (name)))))
+
+
+========================================================================
+Callbacks and variadic arguments
+========================================================================
+
+CALLBACK: int cb ( int count, ... char code, float value )
+
+---
+
+(source_file
+  (ffi_defn
+    (name)
+    (name)
+    (ffi_parameters
+      (ffi_parameter
+        (name)
+        (name))
+      (variadic)
+      (ffi_parameter
+        (name)
+        (name))
+      (ffi_parameter
+        (name)
+        (name)))))
+
+
+========================================================================
+C types globals and libraries
+========================================================================
+
+TYPEDEF: char[2][3] matrix
+C-TYPE: opaque
+C-GLOBAL: int errno
+LIBRARY: libc
+C-LIBRARY: lib H{ { linux "lib.so" } }
+ALIEN: deadbeef
+INITIALIZE-ALIEN: initialized setup ;
+
+---
+
+(source_file
+  (ffi_defn
+    (name)
+    (name))
+  (ffi_defn
+    (name))
+  (ffi_defn
+    (name)
+    (name))
+  (ffi_defn
+    (name))
+  (ffi_defn
+    (name)
+    (array
+      (collection_start)
+      (array
+        (collection_start)
+        (word)
+        (string))))
+  (alien_literal
+    (name))
+  (ffi_defn
+    (name)
+    (expression
+      (word))))
+
+
+========================================================================
+Structs unions and slot attributes
+========================================================================
+
+STRUCT: point { x int initial: 0 } { y int bits: 4 } ;
+PACKED-STRUCT: packed { flag char } ;
+UNION-STRUCT: variant { x int } { y float } ;
+
+---
+
+(source_file
+  (struct_defn
+    (name)
+    (slot
+      (name)
+      (name)
+      (slot_attribute
+        (number)))
+    (slot
+      (name)
+      (name)
+      (slot_attribute
+        (number))))
+  (struct_defn
+    (name)
+    (slot
+      (name)
+      (name)))
+  (struct_defn
+    (name)
+    (slot
+      (name)
+      (name))
+    (slot
+      (name)
+      (name))))
+
+
+========================================================================
+Enums and explicit values
+========================================================================
+
+ENUM: colors red { green 3 } blue ;
+ENUM: small < ushort one { two 2 } ;
+
+---
+
+(source_file
+  (enum_defn
+    (name)
+    (enum_member
+      (name))
+    (enum_member
+      (name)
+      (number))
+    (enum_member
+      (name)))
+  (enum_defn
+    (name)
+    (name)
+    (enum_member
+      (name))
+    (enum_member
+      (name)
+      (number))))
+
+
+========================================================================
+Constructor definitions
+========================================================================
+
+CONSTRUCTOR: <point> point ( x y -- point ) ;
+
+---
+
+(source_file
+  (constructor_defn
+    (name)
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))))
+
+
+========================================================================
+Anonymous types in slots and dispatch
+========================================================================
+
+TUPLE: linked { next maybe{ linked } } ;
+PREDICATE: natural < maybe{ integer } 0 >= ;
+UNION: mixed maybe{ integer } POSTPONE: f ;
+M: maybe{ linked } draw drop ;
+
+---
+
+(source_file
+  (tuple_defn
+    (name)
+    (slot
+      (name)
+      (array
+        (collection_start)
+        (word))))
+  (predicate_defn
+    (name)
+    (array
+      (collection_start)
+      (word))
+    (expression
+      (number)
+      (word)))
+  (class_defn
+    (name)
+    (array
+      (collection_start)
+      (word))
+    (postpone
+      (name)))
+  (method_defn
+    (array
+      (collection_start)
+      (word))
+    (name)
+    (expression
+      (word))))
+
+
+========================================================================
+Help definitions and markup
+========================================================================
+
+HELP: foo { $values { "x" integer } } { $description "Example " { $link POSTPONE: TUPLE: } } ;
+
+---
+
+(source_file
+  (help_defn
+    (name)
+    (expression
+      (array
+        (collection_start)
+        (word)
+        (array
+          (collection_start)
+          (string)
+          (word)))
+      (array
+        (collection_start)
+        (word)
+        (string)
+        (array
+          (collection_start)
+          (help_link
+            (postpone
+              (name))))))))
+
+
+========================================================================
+Articles references and about
+========================================================================
+
+ARTICLE: "topic" "Title" "Description" { $subsections POSTPONE: BV{ foo } ;
+ABOUT: "topic"
+
+---
+
+(source_file
+  (article_defn
+    (string)
+    (string)
+    (expression
+      (string)
+      (array
+        (collection_start)
+        (help_references
+          (postpone
+            (name))
+          (word)))))
+  (about_defn
+    (string)))
+
+
+========================================================================
+Links to structural words and objects
+========================================================================
+
+{ $link < } { $link read-only } { $link , } { $link initial: } { $link T{ tag { name "text" } } }
+
+---
+
+(source_file
+  (array
+    (collection_start)
+    (help_link
+      (word)))
+  (array
+    (collection_start)
+    (help_link
+      (word)))
+  (array
+    (collection_start)
+    (help_link
+      (word)))
+  (array
+    (collection_start)
+    (help_link
+      (word)))
+  (array
+    (collection_start)
+    (help_link
+      (array
+        (collection_start)
+        (word)
+        (array
+          (collection_start)
+          (word)
+          (string))))))
+
+
+========================================================================
+Named multiline strings
+========================================================================
+
+STRING: greeting
+Hello, "world"!
+; embedded semicolon
+;
+greeting
+
+---
+
+(source_file
+  (named_string_defn
+    (name)
+    (string_body))
+  (word))
+
+
+========================================================================
+Empty named multiline string
+========================================================================
+
+STRING: empty
+;
+empty
+
+---
+
+(source_file
+  (named_string_defn
+    (name)
+    (string_body))
+  (word))
+
+
+========================================================================
+EBNF definitions
+========================================================================
+
+EBNF: parser [=[ rule = "x" ]=]
+PARTIAL-EBNF: partial parser
+
+---
+
+(source_file
+  (ebnf_defn
+    (name)
+    (raw_string))
+  (ebnf_defn
+    (name)
+    (name)))
+
+
+========================================================================
+Vocabulary literals and forgetting
+========================================================================
+
+VOCAB: kernel FORGET: foo FORGET: "topic"
+
+---
+
+(source_file
+  (vocabulary_literal
+    (name))
+  (forget
+    (name))
+  (forget
+    (string)))
+
+
+========================================================================
+Nested definitions and evaluations
+========================================================================
+
+[ : foo ( -- ) ; foo ]
+"code" eval( -- x )
+
+---
+
+(source_file
+  (quotation
+    (expression
+      (word_defn
+        (name)
+        (stack_effect))
+      (word)))
+  (string)
+  (call_effect
+    (effect_start)
+    (effect
+      (effect_parameter
+        (name)))))
+
+
+========================================================================
+Word names containing literal prefixes
+========================================================================
+
+ALIAS: MY-H{ H{
+SYNTAX: foo[[ parse-text ;
+
+---
+
+(source_file
+  (alias_defn
+    (name)
+    (name))
+  (syntax_defn
+    (name)
+    (expression
+      (word))))
+
+
+========================================================================
+Anonymous and literal effect types
+========================================================================
+
+( :t -- :f ) ( x: \ integer -- x: { integer float } )
+
+---
+
+(source_file
+  (stack_effect
+    (effect
+      (effect_parameter
+        (boolean)))
+    (effect
+      (effect_parameter
+        (boolean))))
+  (stack_effect
+    (effect
+      (effect_parameter
+        (name)
+        (word_literal
+          (name))))
+    (effect
+      (effect_parameter
+        (name)
+        (array
+          (collection_start)
+          (word)
+          (word))))))
+
+
+========================================================================
+Historical row variables and empty lambdas
+========================================================================
+
+( ... x -- ... y ) [| | 1 ]
+
+---
+
+(source_file
+  (stack_effect
+    (effect
+      (effect_parameter
+        (name))
+      (effect_parameter
+        (name)))
+    (effect
+      (effect_parameter
+        (name))
+      (effect_parameter
+        (name))))
+  (quotation
+    (expression
+      (number))))
+
+
+========================================================================
+Prefix string spans
+========================================================================
+
+P" /tmp/a file" URL" https://example.com/path" DLL" libc"
+
+---
+
+(source_file
+  (string)
+  (string)
+  (string))
+
+
+========================================================================
+Directives with definition bodies
+========================================================================
+
+HINTS: foo string integer ;
+CONSULT: protocol object member>> ;
+TR: translate "abc" "def" ;
+PROTOCOL: drawing draw fill ;
+CATEGORY: letter Lu Ll | letter? ;
+
+---
+
+(source_file
+  (directive_defn
+    (name)
+    (expression
+      (word)
+      (word)))
+  (directive_defn
+    (name)
+    (expression
+      (word)
+      (word)))
+  (directive_defn
+    (name)
+    (expression
+      (string)
+      (string)))
+  (directive_defn
+    (name)
+    (expression
+      (word)
+      (word)))
+  (directive_defn
+    (name)
+    (expression
+      (word)
+      (word)
+      (word)
+      (word))))
+
+
+========================================================================
+Syntax extensions and parser generators
+========================================================================
+
+PEG: parse-word ( text -- result ) "x" token ;
+PARTIAL-PEG: partial ( text -- result ) parse-word ;
+INSN: ##add def: dst use: src ;
+
+---
+
+(source_file
+  (directive_defn
+    (name)
+    (expression
+      (stack_effect
+        (effect
+          (effect_parameter
+            (name)))
+        (effect
+          (effect_parameter
+            (name))))
+      (string)
+      (word)))
+  (directive_defn
+    (name)
+    (expression
+      (stack_effect
+        (effect
+          (effect_parameter
+            (name)))
+        (effect
+          (effect_parameter
+            (name))))
+      (word)))
+  (directive_defn
+    (name)
+    (expression
+      (word)
+      (word)
+      (word)
+      (word))))
+
+
+========================================================================
+XML tag dispatch and namespace
+========================================================================
+
+TAGS: dispatch ( tag -- )
+TAG: NAME dispatch process ;
+XML-NS: ns https://example.com
+
+---
+
+(source_file
+  (generic_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))))
+  (directive_defn
+    (name)
+    (expression
+      (word)
+      (word)))
+  (single_directive
+    (name)
+    (name)))
+
+
+========================================================================
+Platform library directives
+========================================================================
+
+IMPLEMENT-STRUCTS: Foo Bar ;
+SKIP-DEFINITIONS: foo bar ;
+FOREIGN-RECORD-TYPE: opaque void*
+DESTRUCTOR: dispose
+GIR: vocab:gir/Foo.gir
+
+---
+
+(source_file
+  (directive_defn
+    (name)
+    (expression
+      (word)))
+  (directive_defn
+    (name)
+    (expression
+      (word)))
+  (single_directive
+    (name)
+    (name))
+  (single_directive
+    (name))
+  (single_directive
+    (name)))
+
+
+========================================================================
+Endian packed structs and reserved slot names
+========================================================================
+
+LE-PACKED-STRUCT: packed { delimiter char[7] } { count int } ;
+TUPLE: flags recursive read-only ;
+
+---
+
+(source_file
+  (struct_defn
+    (name)
+    (slot
+      (name)
+      (name))
+    (slot
+      (name)
+      (name)))
+  (tuple_defn
+    (name)
+    (name)
+    (name)))
+
+
+========================================================================
+C type arrays and extended foreign functions
+========================================================================
+
+TYPEDEF: { c-string utf8 } utf8-string
+GL-FUNCTION: void glFoo { "glFooARB" } ( int x )
+X-FUNCTION: int XFoo ( int x )
+
+---
+
+(source_file
+  (ffi_defn
+    (array
+      (collection_start)
+      (word)
+      (word))
+    (name))
+  (ffi_defn
+    (name)
+    (name)
+    (array
+      (collection_start)
+      (string))
+    (ffi_parameters
+      (ffi_parameter
+        (name)
+        (name))))
+  (ffi_defn
+    (name)
+    (name)
+    (ffi_parameters
+      (ffi_parameter
+        (name)
+        (name)))))
+
+
+========================================================================
+Functors and interpolated names
+========================================================================
+
+<FUNCTOR: define-box ( T -- )
+Box DEFINES-CLASS ${T}-box
+Box{ DEFINES ${T}-box{
+constructor IS <${T}-box>
+value [ T ]
+WHERE
+TUPLE: Box value ;
+: constructor ( x -- box ) Box boa ;
+;FUNCTOR>
+
+---
+
+(source_file
+  (functor_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name))))
+    (functor_binding
+      (name)
+      (name))
+    (functor_binding
+      (name)
+      (name))
+    (functor_binding
+      (name)
+      (name))
+    (functor_binding
+      (name)
+      (quotation
+        (expression
+          (word))))
+    (tuple_defn
+      (name)
+      (name))
+    (word_defn
+      (name)
+      (stack_effect
+        (effect
+          (effect_parameter
+            (name)))
+        (effect
+          (effect_parameter
+            (name))))
+      (expression
+        (word)
+        (word)))))
+
+
+========================================================================
+COM interfaces
+========================================================================
+
+COM-INTERFACE: IFoo f {00000000-0000-0000-C000-000000000046}
+ int Get ( int index, void** result )
+ void Reset ( ) ;
+
+---
+
+(source_file
+  (com_interface
+    (name)
+    (name)
+    (name)
+    (com_method
+      (name)
+      (name)
+      (ffi_parameters
+        (ffi_parameter
+          (name)
+          (name))
+        (ffi_parameter
+          (name)
+          (name))))
+    (com_method
+      (name)
+      (name)
+      (ffi_parameters))))
+
+
+========================================================================
+Objective C classes
+========================================================================
+
+<CLASS: Foo < NSObject
+COCOA-PROTOCOL: SomeProtocol
+METHOD: void foo: int x [ x drop ] ;
+CLASS-METHOD: int value [ 1 ] ;
+;CLASS>
+
+---
+
+(source_file
+  (objc_class
+    (name)
+    (name)
+    (cocoa_protocol
+      (name))
+    (objc_method
+      (name)
+      (name)
+      (name)
+      (name)
+      (quotation
+        (expression
+          (word)
+          (word))))
+    (objc_method
+      (name)
+      (name)
+      (quotation
+        (expression
+          (number))))))
+
+
+========================================================================
+Opaque XML and interpolated text
+========================================================================
+
+[XML <div class="test"> text <-> </div> XML]
+[I some ${value} and "quotes" I]
+<XML <foo/> XML>
+
+---
+
+(source_file
+  (raw_string)
+  (raw_string)
+  (raw_string))
+
+
+========================================================================
+Vocabulary quotation prefixes
+========================================================================
+
+MEMO[ 1 ] slots[ x y ] get[ x ] set-slots[ x y ]
+
+---
+
+(source_file
+  (quotation
+    (quotation_start)
+    (expression
+      (number)))
+  (quotation
+    (quotation_start)
+    (expression
+      (word)
+      (word)))
+  (quotation
+    (quotation_start)
+    (expression
+      (word)))
+  (quotation
+    (quotation_start)
+    (expression
+      (word)
+      (word))))
+
+
+========================================================================
+Tip and UI definitions
+========================================================================
+
+TIP: "Try " { $link foo } "." ;
+MAIN-WINDOW: window { { title "Demo" } } build ;
+COMPONENT: label
+
+---
+
+(source_file
+  (tip_defn
+    (expression
+      (string)
+      (array
+        (collection_start)
+        (help_link
+          (word)))
+      (string)))
+  (directive_defn
+    (name)
+    (expression
+      (array
+        (collection_start)
+        (array
+          (collection_start)
+          (word)
+          (string)))
+      (word)))
+  (single_directive
+    (name)))
+
+
+========================================================================
+Symbol and imported parsing-word names
+========================================================================
+
+SYMBOL: bits: SYMBOL: => SYMBOL: delimiter
+SYMBOLS: | initial: recursive ;
+FROM: syntax => delimiter recursive < ;
+
+---
+
+(source_file
+  (symbol_defn
+    (name))
+  (symbol_defn
+    (name))
+  (symbol_defn
+    (name))
+  (symbol_defn
+    (name)
+    (name)
+    (name))
+  (import_defn
+    (name)
+    (name)
+    (name)
+    (name)))
+
+
+========================================================================
+Help markers as ordinary values
+========================================================================
+
+{ $link } { $link $link } $link ;missing-word
+
+---
+
+(source_file
+  (array
+    (collection_start)
+    (word))
+  (array
+    (collection_start)
+    (help_link
+      (word)))
+  (help_link
+    (word)))
+
+
+========================================================================
+Help prose punctuation
+========================================================================
+
+ARTICLE: "topic" "Title" Unquoted text (or an aside ) followed by -- punctuation. ;
+
+---
+
+(source_file
+  (article_defn
+    (string)
+    (string)
+    (expression
+      (word)
+      (word)
+      (word)
+      (word)
+      (word)
+      (word)
+      (word)
+      (word)
+      (word)
+      (word))))
+
+
+========================================================================
+Complex numeric literals
+========================================================================
+
+1+2j -1-2j 1+1/2j 1e-2+3e-4j 2j +j -j 1+j 0xA+0xBj
+
+---
+
+(source_file
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number))
+
+
+========================================================================
+Invalid numeric conversions remain words
+========================================================================
+
+1__2 1,,2 1/0 0x1.2 0x 1e+ 1e--2
+
+---
+
+(source_file
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word))

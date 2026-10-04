@@ -6,7 +6,11 @@ Unclosed quotation
 
 ---
 
-(ERROR (expression (number) (number)))
+(ERROR
+  (expression
+    (number)
+    (number)))
+
 
 ========================================================================
 Unclosed array
@@ -16,7 +20,12 @@ Unclosed array
 
 ---
 
-(source_file (array (collection_start) (number) (number) (MISSING "}")))
+(source_file
+  (ERROR
+    (collection_start)
+    (number)
+    (number)))
+
 
 ========================================================================
 Unclosed string
@@ -26,7 +35,11 @@ Unclosed string
 
 ---
 
-(source_file (ERROR (UNEXPECTED '"')) (word))
+(source_file
+  (ERROR
+    (UNEXPECTED '"'))
+  (word))
+
 
 ========================================================================
 Unclosed raw string
@@ -36,7 +49,11 @@ Unclosed raw string
 
 ---
 
-(ERROR (expression (word) (word)))
+(source_file
+  (ERROR
+    (quotation_start)
+    (word)))
+
 
 ========================================================================
 Missing definition terminator
@@ -46,7 +63,12 @@ Missing definition terminator
 
 ---
 
-(source_file (ERROR (name) (stack_effect) (number)))
+(source_file
+  (ERROR
+    (name)
+    (stack_effect)
+    (number)))
+
 
 ========================================================================
 Missing effect separator
@@ -56,7 +78,16 @@ Missing effect separator
 
 ---
 
-(source_file (ERROR (name) (effect (effect_parameter (name)) (effect_parameter (name))) (UNEXPECTED 'u')))
+(source_file
+  (ERROR
+    (name)
+    (effect
+      (effect_parameter
+        (name))
+      (effect_parameter
+        (name)))
+    (UNEXPECTED 'u')))
+
 
 ========================================================================
 Unmatched closing delimiter
@@ -66,4 +97,5 @@ Unmatched closing delimiter
 
 ---
 
-(source_file (ERROR))
+(source_file
+  (ERROR))

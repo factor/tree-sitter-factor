@@ -8,7 +8,14 @@ Line comments and EOF
 
 ---
 
-(source_file (comment) (word_defn (name) (stack_effect) (comment)) (comment))
+(source_file
+  (comment)
+  (word_defn
+    (name)
+    (stack_effect)
+    (comment))
+  (comment))
+
 
 ========================================================================
 Block and effect comments
@@ -19,7 +26,10 @@ second */ (( no stack effect -- here ))
 
 ---
 
-(source_file (comment) (comment))
+(source_file
+  (comment)
+  (comment))
+
 
 ========================================================================
 Bracket comments with matching delimiters
@@ -31,7 +41,10 @@ line two ]]
 
 ---
 
-(source_file (comment) (comment))
+(source_file
+  (comment)
+  (comment))
+
 
 ========================================================================
 Comment markers inside strings and word names
@@ -41,7 +54,12 @@ Comment markers inside strings and word names
 
 ---
 
-(source_file (string) (string) (word) (word))
+(source_file
+  (string)
+  (string)
+  (word)
+  (word))
+
 
 ========================================================================
 Comments between declaration operands
@@ -57,7 +75,27 @@ dup ;
 
 ---
 
-(source_file (import_defn (name) (comment) (name)) (word_defn (comment) (name) (stack_effect (comment) (effect (effect_parameter (name))) (comment) (effect (effect_parameter (name)))) (comment) (expression (word))))
+(source_file
+  (import_defn
+    (name)
+    (comment)
+    (name))
+  (word_defn
+    (comment)
+    (name)
+    (stack_effect
+      (comment)
+      (effect
+        (effect_parameter
+          (name)))
+      (comment)
+      (effect
+        (effect_parameter
+          (name))))
+    (comment)
+    (expression
+      (word))))
+
 
 ========================================================================
 Shebang
@@ -69,4 +107,9 @@ USING: io ;
 
 ---
 
-(source_file (shebang) (import_defn (name)) (string) (word))
+(source_file
+  (shebang)
+  (import_defn
+    (name))
+  (string)
+  (word))

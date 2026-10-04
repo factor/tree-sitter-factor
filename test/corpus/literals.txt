@@ -6,7 +6,20 @@ Numbers and radix prefixes
 
 ---
 
-(source_file (number) (number) (number) (number) (number) (number) (number) (number) (number) (number) (number) (number))
+(source_file
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number))
+
 
 ========================================================================
 Floats and exponents
@@ -16,7 +29,19 @@ Floats and exponents
 
 ---
 
-(source_file (number) (number) (number) (number) (number) (number) (number) (number) (number) (number) (number))
+(source_file
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number))
+
 
 ========================================================================
 Ratios mixed numbers and special floats
@@ -26,7 +51,18 @@ Ratios mixed numbers and special floats
 
 ---
 
-(source_file (number) (number) (number) (number) (number) (number) (number) (number) (nan_literal (name)))
+(source_file
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (nan_literal
+    (name)))
+
 
 ========================================================================
 Numeric looking words stay intact
@@ -36,7 +72,19 @@ Numeric looking words stay intact
 
 ---
 
-(source_file (word) (word) (word) (word) (word) (word) (word) (word) (word) (word) (word))
+(source_file
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word)
+  (word))
+
 
 ========================================================================
 Booleans
@@ -46,7 +94,12 @@ t f true false
 
 ---
 
-(source_file (boolean) (boolean) (word) (word))
+(source_file
+  (boolean)
+  (boolean)
+  (word)
+  (word))
+
 
 ========================================================================
 Strings and escaped quotes
@@ -56,7 +109,15 @@ Strings and escaped quotes
 
 ---
 
-(source_file (string) (string) (string) (string) (string) (string) (string) (string) (string))
+(source_file
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string))
+
 
 ========================================================================
 Triple quoted strings
@@ -67,7 +128,9 @@ second "quoted" """
 
 ---
 
-(source_file (string))
+(source_file
+  (string))
+
 
 ========================================================================
 Raw strings with exact matching delimiters
@@ -80,7 +143,12 @@ EBNF[=[ rule = "x" ]=]
 
 ---
 
-(source_file (raw_string) (raw_string) (raw_string) (raw_string))
+(source_file
+  (raw_string)
+  (raw_string)
+  (raw_string)
+  (raw_string))
+
 
 ========================================================================
 Characters including delimiters
@@ -90,7 +158,20 @@ CHAR: a CHAR: ; CHAR: " CHAR: \n CHAR: \u03bb CHAR: latin-capital-letter-a
 
 ---
 
-(source_file (character_literal (character)) (character_literal (character)) (character_literal (character)) (character_literal (character)) (character_literal (character)) (character_literal (character)))
+(source_file
+  (character_literal
+    (character))
+  (character_literal
+    (character))
+  (character_literal
+    (character))
+  (character_literal
+    (character))
+  (character_literal
+    (character))
+  (character_literal
+    (character)))
+
 
 ========================================================================
 Nested quotations and collections
@@ -102,7 +183,46 @@ B{ 1 2 } BV{ 3 } T{ point f 1 2 } C{ 1 2 } HS{ a b }
 
 ---
 
-(source_file (quotation (expression (number) (quotation (expression (number) (word))) (word))) (array (collection_start) (array (collection_start) (string) (array (collection_start) (number) (number)))) (array (collection_start) (number) (number)) (array (collection_start) (number)) (array (collection_start) (word) (boolean) (number) (number)) (array (collection_start) (number) (number)) (array (collection_start) (word) (word)))
+(source_file
+  (quotation
+    (expression
+      (number)
+      (quotation
+        (expression
+          (number)
+          (word)))
+      (word)))
+  (array
+    (collection_start)
+    (array
+      (collection_start)
+      (string)
+      (array
+        (collection_start)
+        (number)
+        (number))))
+  (array
+    (collection_start)
+    (number)
+    (number))
+  (array
+    (collection_start)
+    (number))
+  (array
+    (collection_start)
+    (word)
+    (boolean)
+    (number)
+    (number))
+  (array
+    (collection_start)
+    (number)
+    (number))
+  (array
+    (collection_start)
+    (word)
+    (word)))
+
 
 ========================================================================
 Vocabulary-defined collection prefixes
@@ -112,7 +232,23 @@ CUSTOM{ [ a ] { b } } maybe{ integer } union{ integer float }
 
 ---
 
-(source_file (array (collection_start) (quotation (expression (word))) (array (collection_start) (word))) (array (collection_start) (word)) (array (collection_start) (word) (word)))
+(source_file
+  (array
+    (collection_start)
+    (quotation
+      (expression
+        (word)))
+    (array
+      (collection_start)
+      (word)))
+  (array
+    (collection_start)
+    (word))
+  (array
+    (collection_start)
+    (word)
+    (word)))
+
 
 ========================================================================
 Fried quotations and arrays
@@ -122,7 +258,24 @@ Fried quotations and arrays
 
 ---
 
-(source_file (quotation (expression (word) (number) (word))) (array (collection_start) (word) (word)) (array (collection_start) (array (collection_start) (word) (word))))
+(source_file
+  (quotation
+    (quotation_start)
+    (expression
+      (word)
+      (number)
+      (word)))
+  (array
+    (collection_start)
+    (word)
+    (word))
+  (array
+    (collection_start)
+    (array
+      (collection_start)
+      (word)
+      (word))))
+
 
 ========================================================================
 Word and method wrappers
@@ -132,7 +285,19 @@ Word and method wrappers
 
 ---
 
-(source_file (word_literal (name)) (word_literal (name)) (word_literal (name)) (method_literal (name) (name)) (postpone (name)))
+(source_file
+  (word_literal
+    (name))
+  (word_literal
+    (name))
+  (word_literal
+    (name))
+  (method_literal
+    (name)
+    (name))
+  (postpone
+    (name)))
+
 
 ========================================================================
 Regexp literal and flags
@@ -142,4 +307,5 @@ R/ ^a\/b[0-9]+$/i
 
 ---
 
-(source_file (regexp))
+(source_file
+  (regexp))

@@ -1,5 +1,101 @@
 [
   {
+    "type": "about_defn",
+    "named": true,
+    "fields": {
+      "topic": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_effect",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
+            "named": true
+          },
+          {
+            "type": "local_binding",
+            "named": true
+          },
+          {
+            "type": "method_literal",
+            "named": true
+          },
+          {
+            "type": "nan_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "postpone",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "stack_effect",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "alias_defn",
     "named": true,
     "fields": {
@@ -14,6 +110,22 @@
         ]
       },
       "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "alien_literal",
+    "named": true,
+    "fields": {
+      "address": {
         "multiple": false,
         "required": true,
         "types": [
@@ -45,7 +157,23 @@
       "required": false,
       "types": [
         {
+          "type": "about_defn",
+          "named": true
+        },
+        {
+          "type": "alias_defn",
+          "named": true
+        },
+        {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
           "named": true
         },
         {
@@ -61,7 +189,79 @@
           "named": true
         },
         {
+          "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
+          "named": true
+        },
+        {
+          "type": "compile_time",
+          "named": true
+        },
+        {
+          "type": "constant_defn",
+          "named": true
+        },
+        {
+          "type": "constructor_defn",
+          "named": true
+        },
+        {
           "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "deferred_defn",
+          "named": true
+        },
+        {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
+          "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
+          "named": true
+        },
+        {
+          "type": "import_defn",
+          "named": true
+        },
+        {
+          "type": "instance_defn",
           "named": true
         },
         {
@@ -69,7 +269,19 @@
           "named": true
         },
         {
+          "type": "main_defn",
+          "named": true
+        },
+        {
+          "type": "method_defn",
+          "named": true
+        },
+        {
           "type": "method_literal",
+          "named": true
+        },
+        {
+          "type": "named_string_defn",
           "named": true
         },
         {
@@ -81,7 +293,19 @@
           "named": true
         },
         {
+          "type": "objc_class",
+          "named": true
+        },
+        {
           "type": "postpone",
+          "named": true
+        },
+        {
+          "type": "predicate_defn",
+          "named": true
+        },
+        {
+          "type": "private_section",
           "named": true
         },
         {
@@ -97,6 +321,10 @@
           "named": true
         },
         {
+          "type": "single_directive",
+          "named": true
+        },
+        {
           "type": "stack_effect",
           "named": true
         },
@@ -105,7 +333,39 @@
           "named": true
         },
         {
+          "type": "struct_defn",
+          "named": true
+        },
+        {
+          "type": "symbol_defn",
+          "named": true
+        },
+        {
+          "type": "syntax_defn",
+          "named": true
+        },
+        {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
+          "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
+          "named": true
+        },
+        {
           "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_defn",
           "named": true
         },
         {
@@ -113,6 +373,202 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "article_defn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "title": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_effect",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
+            "named": true
+          },
+          {
+            "type": "local_binding",
+            "named": true
+          },
+          {
+            "type": "method_literal",
+            "named": true
+          },
+          {
+            "type": "nan_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "postpone",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "stack_effect",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
+          }
+        ]
+      },
+      "topic": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_effect",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
+            "named": true
+          },
+          {
+            "type": "local_binding",
+            "named": true
+          },
+          {
+            "type": "method_literal",
+            "named": true
+          },
+          {
+            "type": "nan_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "postpone",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "stack_effect",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -139,12 +595,8 @@
         "required": true,
         "types": [
           {
-            "type": "call(",
-            "named": false
-          },
-          {
-            "type": "execute(",
-            "named": false
+            "type": "effect_start",
+            "named": true
           }
         ]
       },
@@ -206,7 +658,15 @@
         "required": false,
         "types": [
           {
+            "type": "array",
+            "named": true
+          },
+          {
             "type": "name",
+            "named": true
+          },
+          {
+            "type": "postpone",
             "named": true
           }
         ]
@@ -224,6 +684,104 @@
     }
   },
   {
+    "type": "cocoa_protocol",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "com_interface",
+    "named": true,
+    "fields": {
+      "guid": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "superclass": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "com_method",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "com_method",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ffi_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "compile_time",
     "named": true,
     "fields": {},
@@ -232,11 +790,23 @@
       "required": false,
       "types": [
         {
+          "type": "about_defn",
+          "named": true
+        },
+        {
           "type": "alias_defn",
           "named": true
         },
         {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
           "named": true
         },
         {
@@ -253,6 +823,10 @@
         },
         {
           "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
           "named": true
         },
         {
@@ -276,7 +850,43 @@
           "named": true
         },
         {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
           "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
           "named": true
         },
         {
@@ -304,11 +914,19 @@
           "named": true
         },
         {
+          "type": "named_string_defn",
+          "named": true
+        },
+        {
           "type": "nan_literal",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "objc_class",
           "named": true
         },
         {
@@ -336,11 +954,19 @@
           "named": true
         },
         {
+          "type": "single_directive",
+          "named": true
+        },
+        {
           "type": "stack_effect",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_defn",
           "named": true
         },
         {
@@ -352,7 +978,19 @@
           "named": true
         },
         {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
           "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
           "named": true
         },
         {
@@ -403,6 +1041,10 @@
         "required": true,
         "types": [
           {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
             "type": "array",
             "named": true
           },
@@ -420,6 +1062,14 @@
           },
           {
             "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
             "named": true
           },
           {
@@ -463,6 +1113,10 @@
             "named": true
           },
           {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           },
@@ -478,12 +1132,36 @@
     "type": "constructor_defn",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
       "class": {
         "multiple": false,
         "required": true,
         "types": [
           {
+            "type": "array",
+            "named": true
+          },
+          {
             "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "effect": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "stack_effect",
             "named": true
           }
         ]
@@ -512,6 +1190,210 @@
       "name": {
         "multiple": false,
         "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "directive_defn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AFTER:",
+            "named": false
+          },
+          {
+            "type": "BEFORE:",
+            "named": false
+          },
+          {
+            "type": "BROADCAST:",
+            "named": false
+          },
+          {
+            "type": "CATEGORY-NOT:",
+            "named": false
+          },
+          {
+            "type": "CATEGORY:",
+            "named": false
+          },
+          {
+            "type": "CHLOE:",
+            "named": false
+          },
+          {
+            "type": "CONSULT:",
+            "named": false
+          },
+          {
+            "type": "FLUSHABLE-INSN:",
+            "named": false
+          },
+          {
+            "type": "FOLDABLE-INSN:",
+            "named": false
+          },
+          {
+            "type": "FOREIGN-RECORDS:",
+            "named": false
+          },
+          {
+            "type": "FUNCTOR-SYNTAX:",
+            "named": false
+          },
+          {
+            "type": "HI-REGISTERS:",
+            "named": false
+          },
+          {
+            "type": "HINTS:",
+            "named": false
+          },
+          {
+            "type": "IMPLEMENT-STRUCTS:",
+            "named": false
+          },
+          {
+            "type": "INSN:",
+            "named": false
+          },
+          {
+            "type": "LAZY:",
+            "named": false
+          },
+          {
+            "type": "LAZY::",
+            "named": false
+          },
+          {
+            "type": "MAIN-WINDOW:",
+            "named": false
+          },
+          {
+            "type": "MATCH-VARS:",
+            "named": false
+          },
+          {
+            "type": "METHOD-CHAIN:",
+            "named": false
+          },
+          {
+            "type": "PARTIAL-PEG:",
+            "named": false
+          },
+          {
+            "type": "PEG:",
+            "named": false
+          },
+          {
+            "type": "PROTOCOL:",
+            "named": false
+          },
+          {
+            "type": "REGISTERS:",
+            "named": false
+          },
+          {
+            "type": "RULE:",
+            "named": false
+          },
+          {
+            "type": "SKIP-DEFINITIONS:",
+            "named": false
+          },
+          {
+            "type": "SLOT-PROTOCOL:",
+            "named": false
+          },
+          {
+            "type": "SPECIALIZED-ARRAYS:",
+            "named": false
+          },
+          {
+            "type": "SPECIALIZED-VECTORS:",
+            "named": false
+          },
+          {
+            "type": "TAG:",
+            "named": false
+          },
+          {
+            "type": "TR:",
+            "named": false
+          },
+          {
+            "type": "VREG-INSN:",
+            "named": false
+          },
+          {
+            "type": "XML-ERROR:",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ebnf_defn",
+    "named": true,
+    "fields": {
+      "grammar": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": false,
         "types": [
           {
             "type": "name",
@@ -559,15 +1441,179 @@
             "named": true
           },
           {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
             "type": "stack_effect",
             "named": true
           },
           {
             "type": "word",
             "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "enum_defn",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enum_member",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_member",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_effect",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
+            "named": true
+          },
+          {
+            "type": "local_binding",
+            "named": true
+          },
+          {
+            "type": "method_literal",
+            "named": true
+          },
+          {
+            "type": "nan_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "postpone",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "stack_effect",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -579,7 +1625,23 @@
       "required": true,
       "types": [
         {
+          "type": "about_defn",
+          "named": true
+        },
+        {
+          "type": "alias_defn",
+          "named": true
+        },
+        {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
           "named": true
         },
         {
@@ -595,7 +1657,79 @@
           "named": true
         },
         {
+          "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
+          "named": true
+        },
+        {
+          "type": "compile_time",
+          "named": true
+        },
+        {
+          "type": "constant_defn",
+          "named": true
+        },
+        {
+          "type": "constructor_defn",
+          "named": true
+        },
+        {
           "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "deferred_defn",
+          "named": true
+        },
+        {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
+          "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
+          "named": true
+        },
+        {
+          "type": "import_defn",
+          "named": true
+        },
+        {
+          "type": "instance_defn",
           "named": true
         },
         {
@@ -603,7 +1737,19 @@
           "named": true
         },
         {
+          "type": "main_defn",
+          "named": true
+        },
+        {
+          "type": "method_defn",
+          "named": true
+        },
+        {
           "type": "method_literal",
+          "named": true
+        },
+        {
+          "type": "named_string_defn",
           "named": true
         },
         {
@@ -615,7 +1761,19 @@
           "named": true
         },
         {
+          "type": "objc_class",
+          "named": true
+        },
+        {
           "type": "postpone",
+          "named": true
+        },
+        {
+          "type": "predicate_defn",
+          "named": true
+        },
+        {
+          "type": "private_section",
           "named": true
         },
         {
@@ -631,6 +1789,10 @@
           "named": true
         },
         {
+          "type": "single_directive",
+          "named": true
+        },
+        {
           "type": "stack_effect",
           "named": true
         },
@@ -639,7 +1801,616 @@
           "named": true
         },
         {
+          "type": "struct_defn",
+          "named": true
+        },
+        {
+          "type": "symbol_defn",
+          "named": true
+        },
+        {
+          "type": "syntax_defn",
+          "named": true
+        },
+        {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
+          "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
+          "named": true
+        },
+        {
           "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_defn",
+          "named": true
+        },
+        {
+          "type": "word_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ffi_defn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "extensions": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          }
+        ]
+      },
+      "foreign_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "kind": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "C-TYPE:",
+            "named": false
+          },
+          {
+            "type": "CALLBACK:",
+            "named": false
+          },
+          {
+            "type": "FUNCTION:",
+            "named": false
+          },
+          {
+            "type": "GL-FUNCTION:",
+            "named": false
+          },
+          {
+            "type": "LIBRARY:",
+            "named": false
+          },
+          {
+            "type": "X-FUNCTION:",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "platforms": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_effect",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
+            "named": true
+          },
+          {
+            "type": "local_binding",
+            "named": true
+          },
+          {
+            "type": "method_literal",
+            "named": true
+          },
+          {
+            "type": "nan_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "postpone",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "stack_effect",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "ffi_parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ffi_parameter",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ffi_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ffi_parameter",
+          "named": true
+        },
+        {
+          "type": "variadic",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "forget",
+    "named": true,
+    "fields": {
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "name",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "functor_binding",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "DEFERS",
+            "named": false
+          },
+          {
+            "type": "DEFINES",
+            "named": false
+          },
+          {
+            "type": "DEFINES-CLASS",
+            "named": false
+          },
+          {
+            "type": "DEFINES-PRIVATE",
+            "named": false
+          },
+          {
+            "type": "IS",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "functor_defn",
+    "named": true,
+    "fields": {
+      "effect": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "stack_effect",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "about_defn",
+          "named": true
+        },
+        {
+          "type": "alias_defn",
+          "named": true
+        },
+        {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "call_effect",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
+          "named": true
+        },
+        {
+          "type": "compile_time",
+          "named": true
+        },
+        {
+          "type": "constant_defn",
+          "named": true
+        },
+        {
+          "type": "constructor_defn",
+          "named": true
+        },
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "deferred_defn",
+          "named": true
+        },
+        {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_binding",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
+          "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
+          "named": true
+        },
+        {
+          "type": "import_defn",
+          "named": true
+        },
+        {
+          "type": "instance_defn",
+          "named": true
+        },
+        {
+          "type": "local_binding",
+          "named": true
+        },
+        {
+          "type": "main_defn",
+          "named": true
+        },
+        {
+          "type": "method_defn",
+          "named": true
+        },
+        {
+          "type": "method_literal",
+          "named": true
+        },
+        {
+          "type": "named_string_defn",
+          "named": true
+        },
+        {
+          "type": "nan_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objc_class",
+          "named": true
+        },
+        {
+          "type": "postpone",
+          "named": true
+        },
+        {
+          "type": "predicate_defn",
+          "named": true
+        },
+        {
+          "type": "private_section",
+          "named": true
+        },
+        {
+          "type": "quotation",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_directive",
+          "named": true
+        },
+        {
+          "type": "stack_effect",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_defn",
+          "named": true
+        },
+        {
+          "type": "symbol_defn",
+          "named": true
+        },
+        {
+          "type": "syntax_defn",
+          "named": true
+        },
+        {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
+          "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_defn",
           "named": true
         },
         {
@@ -688,6 +2459,10 @@
           {
             "type": "PRIMITIVE:",
             "named": false
+          },
+          {
+            "type": "TAGS:",
+            "named": false
           }
         ]
       },
@@ -711,6 +2486,260 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "help_defn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "help_link",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "$link",
+            "named": false
+          },
+          {
+            "type": "$subsection",
+            "named": false
+          },
+          {
+            "type": "$vocab-link",
+            "named": false
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_effect",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
+            "named": true
+          },
+          {
+            "type": "local_binding",
+            "named": true
+          },
+          {
+            "type": "method_literal",
+            "named": true
+          },
+          {
+            "type": "nan_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "postpone",
+            "named": true
+          },
+          {
+            "type": "quotation",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "regexp",
+            "named": true
+          },
+          {
+            "type": "stack_effect",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          },
+          {
+            "type": "word_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "help_references",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "$related",
+            "named": false
+          },
+          {
+            "type": "$see-also",
+            "named": false
+          },
+          {
+            "type": "$subsections",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "call_effect",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
+          "named": true
+        },
+        {
+          "type": "local_binding",
+          "named": true
+        },
+        {
+          "type": "method_literal",
+          "named": true
+        },
+        {
+          "type": "nan_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "postpone",
+          "named": true
+        },
+        {
+          "type": "quotation",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "stack_effect",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_literal",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -801,6 +2830,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array",
+            "named": true
+          },
           {
             "type": "name",
             "named": true
@@ -907,6 +2940,10 @@
         "required": true,
         "types": [
           {
+            "type": "array",
+            "named": true
+          },
+          {
             "type": "name",
             "named": true
           }
@@ -943,7 +2980,42 @@
         "required": true,
         "types": [
           {
+            "type": "array",
+            "named": true
+          },
+          {
             "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "named_string_defn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_body",
             "named": true
           }
         ]
@@ -974,6 +3046,100 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "objc_class",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "superclass": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "cocoa_protocol",
+          "named": true
+        },
+        {
+          "type": "objc_method",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "objc_method",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "CLASS-METHOD:",
+            "named": false
+          },
+          {
+            "type": "METHOD:",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "quotation",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1021,6 +3187,10 @@
         "required": true,
         "types": [
           {
+            "type": "array",
+            "named": true
+          },
+          {
             "type": "name",
             "named": true
           }
@@ -1037,11 +3207,23 @@
       "required": false,
       "types": [
         {
+          "type": "about_defn",
+          "named": true
+        },
+        {
           "type": "alias_defn",
           "named": true
         },
         {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
           "named": true
         },
         {
@@ -1058,6 +3240,10 @@
         },
         {
           "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
           "named": true
         },
         {
@@ -1081,7 +3267,43 @@
           "named": true
         },
         {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
           "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
           "named": true
         },
         {
@@ -1109,11 +3331,19 @@
           "named": true
         },
         {
+          "type": "named_string_defn",
+          "named": true
+        },
+        {
           "type": "nan_literal",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "objc_class",
           "named": true
         },
         {
@@ -1141,11 +3371,19 @@
           "named": true
         },
         {
+          "type": "single_directive",
+          "named": true
+        },
+        {
           "type": "stack_effect",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_defn",
           "named": true
         },
         {
@@ -1157,7 +3395,19 @@
           "named": true
         },
         {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
           "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
           "named": true
         },
         {
@@ -1208,6 +3458,10 @@
           {
             "type": "[let",
             "named": false
+          },
+          {
+            "type": "quotation_start",
+            "named": true
           }
         ]
       },
@@ -1217,6 +3471,64 @@
         "types": [
           {
             "type": "local_parameters",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "single_directive",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "COCOA-PROTOCOL:",
+            "named": false
+          },
+          {
+            "type": "COMPONENT:",
+            "named": false
+          },
+          {
+            "type": "DESTRUCTOR:",
+            "named": false
+          },
+          {
+            "type": "GIR:",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "uri": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
             "named": true
           }
         ]
@@ -1241,6 +3553,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "array",
+            "named": true
+          },
           {
             "type": "name",
             "named": true
@@ -1268,6 +3584,10 @@
         "required": false,
         "types": [
           {
+            "type": "alien_literal",
+            "named": true
+          },
+          {
             "type": "array",
             "named": true
           },
@@ -1285,6 +3605,14 @@
           },
           {
             "type": "declaration",
+            "named": true
+          },
+          {
+            "type": "help_link",
+            "named": true
+          },
+          {
+            "type": "help_references",
             "named": true
           },
           {
@@ -1328,6 +3656,10 @@
             "named": true
           },
           {
+            "type": "vocabulary_literal",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           },
@@ -1349,11 +3681,23 @@
       "required": false,
       "types": [
         {
+          "type": "about_defn",
+          "named": true
+        },
+        {
           "type": "alias_defn",
           "named": true
         },
         {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
           "named": true
         },
         {
@@ -1370,6 +3714,10 @@
         },
         {
           "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
           "named": true
         },
         {
@@ -1393,7 +3741,43 @@
           "named": true
         },
         {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
           "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
           "named": true
         },
         {
@@ -1421,11 +3805,19 @@
           "named": true
         },
         {
+          "type": "named_string_defn",
+          "named": true
+        },
+        {
           "type": "nan_literal",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "objc_class",
           "named": true
         },
         {
@@ -1457,11 +3849,19 @@
           "named": true
         },
         {
+          "type": "single_directive",
+          "named": true
+        },
+        {
           "type": "stack_effect",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_defn",
           "named": true
         },
         {
@@ -1473,7 +3873,19 @@
           "named": true
         },
         {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
           "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
           "named": true
         },
         {
@@ -1511,6 +3923,66 @@
         "types": [
           {
             "type": "effect",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "struct_defn",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "BE-PACKED-STRUCT:",
+            "named": false
+          },
+          {
+            "type": "BE-STRUCT:",
+            "named": false
+          },
+          {
+            "type": "LE-PACKED-STRUCT:",
+            "named": false
+          },
+          {
+            "type": "LE-STRUCT:",
+            "named": false
+          },
+          {
+            "type": "PACKED-STRUCT:",
+            "named": false
+          },
+          {
+            "type": "STRUCT:",
+            "named": false
+          },
+          {
+            "type": "UNION-STRUCT:",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "slot": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "slot",
             "named": true
           }
         ]
@@ -1574,6 +4046,22 @@
     }
   },
   {
+    "type": "tip_defn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "tuple_defn",
     "named": true,
     "fields": {
@@ -1624,11 +4112,263 @@
         "required": false,
         "types": [
           {
+            "type": "array",
+            "named": true
+          },
+          {
             "type": "name",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "variadic",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "vocabulary_literal",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "watch",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "about_defn",
+          "named": true
+        },
+        {
+          "type": "alias_defn",
+          "named": true
+        },
+        {
+          "type": "alien_literal",
+          "named": true
+        },
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "article_defn",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "call_effect",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "class_defn",
+          "named": true
+        },
+        {
+          "type": "com_interface",
+          "named": true
+        },
+        {
+          "type": "compile_time",
+          "named": true
+        },
+        {
+          "type": "constant_defn",
+          "named": true
+        },
+        {
+          "type": "constructor_defn",
+          "named": true
+        },
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "deferred_defn",
+          "named": true
+        },
+        {
+          "type": "directive_defn",
+          "named": true
+        },
+        {
+          "type": "ebnf_defn",
+          "named": true
+        },
+        {
+          "type": "enum_defn",
+          "named": true
+        },
+        {
+          "type": "ffi_defn",
+          "named": true
+        },
+        {
+          "type": "forget",
+          "named": true
+        },
+        {
+          "type": "functor_defn",
+          "named": true
+        },
+        {
+          "type": "generic_defn",
+          "named": true
+        },
+        {
+          "type": "help_defn",
+          "named": true
+        },
+        {
+          "type": "help_link",
+          "named": true
+        },
+        {
+          "type": "help_references",
+          "named": true
+        },
+        {
+          "type": "import_defn",
+          "named": true
+        },
+        {
+          "type": "instance_defn",
+          "named": true
+        },
+        {
+          "type": "local_binding",
+          "named": true
+        },
+        {
+          "type": "main_defn",
+          "named": true
+        },
+        {
+          "type": "method_defn",
+          "named": true
+        },
+        {
+          "type": "method_literal",
+          "named": true
+        },
+        {
+          "type": "named_string_defn",
+          "named": true
+        },
+        {
+          "type": "nan_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "objc_class",
+          "named": true
+        },
+        {
+          "type": "postpone",
+          "named": true
+        },
+        {
+          "type": "predicate_defn",
+          "named": true
+        },
+        {
+          "type": "private_section",
+          "named": true
+        },
+        {
+          "type": "quotation",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "regexp",
+          "named": true
+        },
+        {
+          "type": "single_directive",
+          "named": true
+        },
+        {
+          "type": "stack_effect",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "struct_defn",
+          "named": true
+        },
+        {
+          "type": "symbol_defn",
+          "named": true
+        },
+        {
+          "type": "syntax_defn",
+          "named": true
+        },
+        {
+          "type": "tip_defn",
+          "named": true
+        },
+        {
+          "type": "tuple_defn",
+          "named": true
+        },
+        {
+          "type": "vocabulary_literal",
+          "named": true
+        },
+        {
+          "type": "watch",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_defn",
+          "named": true
+        },
+        {
+          "type": "word_literal",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1730,7 +4470,35 @@
     }
   },
   {
+    "type": "$",
+    "named": false
+  },
+  {
     "type": "$[",
+    "named": false
+  },
+  {
+    "type": "$link",
+    "named": false
+  },
+  {
+    "type": "$related",
+    "named": false
+  },
+  {
+    "type": "$see-also",
+    "named": false
+  },
+  {
+    "type": "$subsection",
+    "named": false
+  },
+  {
+    "type": "$subsections",
+    "named": false
+  },
+  {
+    "type": "$vocab-link",
     "named": false
   },
   {
@@ -1746,7 +4514,15 @@
     "named": false
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": "--",
+    "named": false
+  },
+  {
+    "type": "...",
     "named": false
   },
   {
@@ -1766,6 +4542,14 @@
     "named": false
   },
   {
+    "type": ";CLASS>",
+    "named": false
+  },
+  {
+    "type": ";FUNCTOR>",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
@@ -1774,7 +4558,19 @@
     "named": false
   },
   {
+    "type": "<CLASS:",
+    "named": false
+  },
+  {
+    "type": "<FUNCTOR:",
+    "named": false
+  },
+  {
     "type": "<PRIVATE",
+    "named": false
+  },
+  {
+    "type": "<WATCH",
     "named": false
   },
   {
@@ -1786,7 +4582,39 @@
     "named": false
   },
   {
+    "type": "ABOUT:",
+    "named": false
+  },
+  {
+    "type": "AFTER:",
+    "named": false
+  },
+  {
     "type": "ALIAS:",
+    "named": false
+  },
+  {
+    "type": "ALIEN:",
+    "named": false
+  },
+  {
+    "type": "ARTICLE:",
+    "named": false
+  },
+  {
+    "type": "BE-PACKED-STRUCT:",
+    "named": false
+  },
+  {
+    "type": "BE-STRUCT:",
+    "named": false
+  },
+  {
+    "type": "BEFORE:",
+    "named": false
+  },
+  {
+    "type": "BROADCAST:",
     "named": false
   },
   {
@@ -1794,7 +4622,31 @@
     "named": false
   },
   {
+    "type": "C-GLOBAL:",
+    "named": false
+  },
+  {
+    "type": "C-LIBRARY:",
+    "named": false
+  },
+  {
+    "type": "C-TYPE:",
+    "named": false
+  },
+  {
     "type": "C:",
+    "named": false
+  },
+  {
+    "type": "CALLBACK:",
+    "named": false
+  },
+  {
+    "type": "CATEGORY-NOT:",
+    "named": false
+  },
+  {
+    "type": "CATEGORY:",
     "named": false
   },
   {
@@ -1802,11 +4654,67 @@
     "named": false
   },
   {
+    "type": "CHLOE:",
+    "named": false
+  },
+  {
+    "type": "CLASS-METHOD:",
+    "named": false
+  },
+  {
+    "type": "COCOA-PROTOCOL:",
+    "named": false
+  },
+  {
+    "type": "COM-INTERFACE:",
+    "named": false
+  },
+  {
+    "type": "COMPONENT:",
+    "named": false
+  },
+  {
     "type": "CONSTANT:",
     "named": false
   },
   {
+    "type": "CONSTRUCTOR:",
+    "named": false
+  },
+  {
+    "type": "CONSULT:",
+    "named": false
+  },
+  {
     "type": "DEFER:",
+    "named": false
+  },
+  {
+    "type": "DEFERS",
+    "named": false
+  },
+  {
+    "type": "DEFINES",
+    "named": false
+  },
+  {
+    "type": "DEFINES-CLASS",
+    "named": false
+  },
+  {
+    "type": "DEFINES-PRIVATE",
+    "named": false
+  },
+  {
+    "type": "DESTRUCTOR:",
+    "named": false
+  },
+  {
+    "type": "EBNF:",
+    "named": false
+  },
+  {
+    "type": "ENUM:",
     "named": false
   },
   {
@@ -1818,7 +4726,39 @@
     "named": false
   },
   {
+    "type": "FLUSHABLE-INSN:",
+    "named": false
+  },
+  {
+    "type": "FOLDABLE-INSN:",
+    "named": false
+  },
+  {
+    "type": "FOREIGN-RECORD-TYPE:",
+    "named": false
+  },
+  {
+    "type": "FOREIGN-RECORDS:",
+    "named": false
+  },
+  {
+    "type": "FORGET:",
+    "named": false
+  },
+  {
     "type": "FROM:",
+    "named": false
+  },
+  {
+    "type": "FUNCTION-ALIAS:",
+    "named": false
+  },
+  {
+    "type": "FUNCTION:",
+    "named": false
+  },
+  {
+    "type": "FUNCTOR-SYNTAX:",
     "named": false
   },
   {
@@ -1827,6 +4767,26 @@
   },
   {
     "type": "GENERIC:",
+    "named": false
+  },
+  {
+    "type": "GIR:",
+    "named": false
+  },
+  {
+    "type": "GL-FUNCTION:",
+    "named": false
+  },
+  {
+    "type": "HELP:",
+    "named": false
+  },
+  {
+    "type": "HI-REGISTERS:",
+    "named": false
+  },
+  {
+    "type": "HINTS:",
     "named": false
   },
   {
@@ -1842,11 +4802,23 @@
     "named": false
   },
   {
+    "type": "IMPLEMENT-STRUCTS:",
+    "named": false
+  },
+  {
     "type": "IN:",
     "named": false
   },
   {
+    "type": "INITIALIZE-ALIEN:",
+    "named": false
+  },
+  {
     "type": "INITIALIZED-SYMBOL:",
+    "named": false
+  },
+  {
+    "type": "INSN:",
     "named": false
   },
   {
@@ -1855,6 +4827,30 @@
   },
   {
     "type": "INTERSECTION:",
+    "named": false
+  },
+  {
+    "type": "IS",
+    "named": false
+  },
+  {
+    "type": "LAZY:",
+    "named": false
+  },
+  {
+    "type": "LAZY::",
+    "named": false
+  },
+  {
+    "type": "LE-PACKED-STRUCT:",
+    "named": false
+  },
+  {
+    "type": "LE-STRUCT:",
+    "named": false
+  },
+  {
+    "type": "LIBRARY:",
     "named": false
   },
   {
@@ -1874,7 +4870,15 @@
     "named": false
   },
   {
+    "type": "MAIN-WINDOW:",
+    "named": false
+  },
+  {
     "type": "MAIN:",
+    "named": false
+  },
+  {
+    "type": "MATCH-VARS:",
     "named": false
   },
   {
@@ -1890,6 +4894,14 @@
     "named": false
   },
   {
+    "type": "METHOD-CHAIN:",
+    "named": false
+  },
+  {
+    "type": "METHOD:",
+    "named": false
+  },
+  {
     "type": "MIXIN:",
     "named": false
   },
@@ -1899,6 +4911,22 @@
   },
   {
     "type": "NAN:",
+    "named": false
+  },
+  {
+    "type": "PACKED-STRUCT:",
+    "named": false
+  },
+  {
+    "type": "PARTIAL-EBNF:",
+    "named": false
+  },
+  {
+    "type": "PARTIAL-PEG:",
+    "named": false
+  },
+  {
+    "type": "PEG:",
     "named": false
   },
   {
@@ -1918,6 +4946,10 @@
     "named": false
   },
   {
+    "type": "PROTOCOL:",
+    "named": false
+  },
+  {
     "type": "QUALIFIED-WITH:",
     "named": false
   },
@@ -1926,11 +4958,19 @@
     "named": false
   },
   {
+    "type": "REGISTERS:",
+    "named": false
+  },
+  {
     "type": "RENAME:",
     "named": false
   },
   {
     "type": "REUSE:",
+    "named": false
+  },
+  {
+    "type": "RULE:",
     "named": false
   },
   {
@@ -1946,11 +4986,35 @@
     "named": false
   },
   {
+    "type": "SKIP-DEFINITIONS:",
+    "named": false
+  },
+  {
+    "type": "SLOT-PROTOCOL:",
+    "named": false
+  },
+  {
     "type": "SLOT:",
     "named": false
   },
   {
+    "type": "SPECIALIZED-ARRAYS:",
+    "named": false
+  },
+  {
+    "type": "SPECIALIZED-VECTORS:",
+    "named": false
+  },
+  {
     "type": "STARTUP-HOOK:",
+    "named": false
+  },
+  {
+    "type": "STRING:",
+    "named": false
+  },
+  {
+    "type": "STRUCT:",
     "named": false
   },
   {
@@ -1966,6 +5030,22 @@
     "named": false
   },
   {
+    "type": "TAG:",
+    "named": false
+  },
+  {
+    "type": "TAGS:",
+    "named": false
+  },
+  {
+    "type": "TIP:",
+    "named": false
+  },
+  {
+    "type": "TR:",
+    "named": false
+  },
+  {
     "type": "TUPLE:",
     "named": false
   },
@@ -1975,6 +5055,14 @@
   },
   {
     "type": "TYPED::",
+    "named": false
+  },
+  {
+    "type": "TYPEDEF:",
+    "named": false
+  },
+  {
+    "type": "UNION-STRUCT:",
     "named": false
   },
   {
@@ -1991,6 +5079,34 @@
   },
   {
     "type": "USING:",
+    "named": false
+  },
+  {
+    "type": "VOCAB:",
+    "named": false
+  },
+  {
+    "type": "VREG-INSN:",
+    "named": false
+  },
+  {
+    "type": "WATCH>",
+    "named": false
+  },
+  {
+    "type": "WHERE",
+    "named": false
+  },
+  {
+    "type": "X-FUNCTION:",
+    "named": false
+  },
+  {
+    "type": "XML-ERROR:",
+    "named": false
+  },
+  {
+    "type": "XML-NS:",
     "named": false
   },
   {
@@ -2018,7 +5134,7 @@
     "named": false
   },
   {
-    "type": "call(",
+    "type": "bits:",
     "named": false
   },
   {
@@ -2043,8 +5159,8 @@
     "named": false
   },
   {
-    "type": "execute(",
-    "named": false
+    "type": "effect_start",
+    "named": true
   },
   {
     "type": "f",
@@ -2071,11 +5187,11 @@
     "named": false
   },
   {
-    "type": "name",
+    "type": "number",
     "named": true
   },
   {
-    "type": "number",
+    "type": "quotation_start",
     "named": true
   },
   {
@@ -2100,6 +5216,10 @@
   },
   {
     "type": "string",
+    "named": true
+  },
+  {
+    "type": "string_body",
     "named": true
   },
   {

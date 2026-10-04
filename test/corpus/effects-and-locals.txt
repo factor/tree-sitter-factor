@@ -6,7 +6,28 @@ Nested typed stack effects
 
 ---
 
-(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name))))) (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (word))))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)
+          (stack_effect
+            (effect
+              (effect_parameter
+                (name)))
+            (effect
+              (effect_parameter
+                (name)))))
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (word))))
+
 
 ========================================================================
 Typed and standalone effect parameters
@@ -17,7 +38,28 @@ Typed and standalone effect parameters
 
 ---
 
-(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name) (word))) (effect (effect_parameter (name) (word)))) (expression (word))) (stack_effect (effect (effect_parameter (word))) (effect (effect_parameter (word)))))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)
+          (word)))
+      (effect
+        (effect_parameter
+          (name)
+          (word))))
+    (expression
+      (word)))
+  (stack_effect
+    (effect
+      (effect_parameter
+        (word)))
+    (effect
+      (effect_parameter
+        (word)))))
+
 
 ========================================================================
 Row variables and termination effects
@@ -27,7 +69,39 @@ Row variables and termination effects
 
 ---
 
-(source_file (stack_effect (effect (effect_parameter (name)) (effect_parameter (name))) (effect (effect_parameter (name)) (effect_parameter (name)))) (stack_effect (effect (effect_parameter (name)))) (stack_effect (effect (effect_parameter (name)) (effect_parameter (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))))) (effect (effect_parameter (name)))))
+(source_file
+  (stack_effect
+    (effect
+      (effect_parameter
+        (name))
+      (effect_parameter
+        (name)))
+    (effect
+      (effect_parameter
+        (name))
+      (effect_parameter
+        (name))))
+  (stack_effect
+    (effect
+      (effect_parameter
+        (name))))
+  (stack_effect
+    (effect
+      (effect_parameter
+        (name))
+      (effect_parameter
+        (name)
+        (stack_effect
+          (effect
+            (effect_parameter
+              (name)))
+          (effect
+            (effect_parameter
+              (name))))))
+    (effect
+      (effect_parameter
+        (name)))))
+
 
 ========================================================================
 Call and execute effects
@@ -37,7 +111,18 @@ call( x -- y ) execute( -- )
 
 ---
 
-(source_file (call_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (call_effect))
+(source_file
+  (call_effect
+    (effect_start)
+    (effect
+      (effect_parameter
+        (name)))
+    (effect
+      (effect_parameter
+        (name))))
+  (call_effect
+    (effect_start)))
+
 
 ========================================================================
 Lexical quotation parameters
@@ -47,7 +132,22 @@ Lexical quotation parameters
 
 ---
 
-(source_file (quotation (local_parameters (name) (name)) (expression (word) (word) (word))) (quotation (expression (number) (local_binding (name)) (word))))
+(source_file
+  (quotation
+    (local_parameters
+      (name)
+      (name))
+    (expression
+      (word)
+      (word)
+      (word)))
+  (quotation
+    (expression
+      (number)
+      (local_binding
+        (name))
+      (word))))
+
 
 ========================================================================
 Mutable and multiple locals
@@ -58,4 +158,36 @@ Mutable and multiple locals
 
 ---
 
-(source_file (word_defn (name) (stack_effect (effect (effect_parameter (name))) (effect (effect_parameter (name)))) (expression (number) (local_binding (name)) (word) (quotation (local_parameters (name)) (expression (word) (word) (word) (word))) (word) (word))) (number) (number) (local_binding (name) (name)) (word) (word) (word))
+(source_file
+  (word_defn
+    (name)
+    (stack_effect
+      (effect
+        (effect_parameter
+          (name)))
+      (effect
+        (effect_parameter
+          (name))))
+    (expression
+      (number)
+      (local_binding
+        (name))
+      (word)
+      (quotation
+        (local_parameters
+          (name))
+        (expression
+          (word)
+          (word)
+          (word)
+          (word)))
+      (word)
+      (word)))
+  (number)
+  (number)
+  (local_binding
+    (name)
+    (name))
+  (word)
+  (word)
+  (word))
